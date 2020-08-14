@@ -1,0 +1,15 @@
+header{
+    background-image: url(/assets/fundo.png);
+    background-position: center;
+    background-size: cover;
+    min-height: 200px; ;
+}
+
+header img{
+    min-width:280px ;
+    padding:20px ;
+}
+
+header div{
+    background-color:#817c7cd5;
+}

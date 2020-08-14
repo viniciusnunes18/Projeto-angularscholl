@@ -1,0 +1,35 @@
+<section class="container">
+  <form #fc="ngForm" (ngSubmit)="onsubmit(fc)">
+    <div class="form-group">
+      <label for="">Nome:</label>
+      <input type="text" class="form-control" id="nome" [(ngModel)]="user.nome" placeholder="digite seu nome"
+        name="nome" required>
+    </div>
+
+    <div class="form-group">
+      <label for="">Email:</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="user.email" placeholder="digite seu email"
+        name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="pws">Senha:</label>
+      <input type="password" class="form-control" id="pws" [(ngModel)]="user.pws" placeholder="digite sua senha"
+        name="pws" required minlength="6" #s="ngModel">
+        <span *ngIf="(s.invalid && s.dirty)" class="text-danger">Senhas é muito curta!</span>
+    </div>
+
+    <div class="form-group">
+      <label for="confpws">Confirmação de Senha:</label>
+      <input type="password" class="form-control" id="confpws" [(ngModel)]="confpws" placeholder="digite sua senha"
+        name="confpws" required #c="ngModel">
+        <span *ngIf="(s.value != c.value) && c.dirty" class="text-danger">Senhas não são iguais!</span>
+    </div>
+
+    <div class="form-group">
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="fc.invalid || (s.value != c.value)">Enviar</button>
+  </form>
+
+</section>
