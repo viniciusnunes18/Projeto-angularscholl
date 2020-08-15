@@ -17,4 +17,8 @@ export class UsuarioService {
   public add(usuario: Usuario) {
     return this.http.post(this.conn + this.collection, usuario);
   }
+
+  public getAll(){
+   return this.http.get<Usuario[]>(this.conn + this.collection)
+  }
 }
